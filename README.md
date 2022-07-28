@@ -27,6 +27,7 @@ apt-cache search ros-kinetic
 ###### It's convenient if the ROS environment variables are automatically added to your bash session every time a new shell is launched
 ```
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+
 source ~/.bashrc
 ```
 ### 7- Dependencies for building packages
@@ -38,7 +39,9 @@ sudo apt install python-rosdep python-rosinstall python-rosinstall-generator pyt
 ###### Before you can use many ROS tools, you will need to initialize rosdep. rosdep enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS
 ```
 sudo apt install python-rosdep
+
 sudo rosdep init
+
 rosdep update
 ```
 ### 9- Install Prebuilt Package
@@ -49,14 +52,18 @@ sudo apt-get install ros-noetic-catkin
 ###### Now you need to build the packages in the catkin workspace
 ```
 mkdir -p ~/catkin_ws/src
+
 cd ~/catkin_ws/
+
 catkin_make
+
 cd ~/catkin_ws/src
 ```
 ### 11- Use source-installed rosdep
 ###### Clone the development repository
 ```
 git clone https://github.com/smart-methods/arduino_robot_arm.git 
+
 cd ~/catkin_ws
 ```
 ### 12- Install dependency of all packages in the workspace
@@ -75,4 +82,16 @@ sudo apt-get install ros-kinetic-gazebo-ros-control joint-state-publisher
 
 sudo apt-get install ros-kinetic-ros-controllers ros-kinetic-ros-control
 ```
+### 14- Edit file ~/.bashrc
+###### at the end of the (bashrc) file add the follwing line
+(source /home/wesam/catkin_ws/devel/setup.bash)
+then 
+ctrl + o
+then
+ctrl + x
+```
+sudo nano ~/.bashrc
 
+source ~/.bashrc
+```
+### 15- launch
