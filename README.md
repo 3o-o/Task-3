@@ -34,3 +34,35 @@ source ~/.bashrc
 ```
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 ```
+### 8- Initialize rosdep
+###### Before you can use many ROS tools, you will need to initialize rosdep. rosdep enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS
+```
+sudo apt install python-rosdep
+sudo rosdep init
+rosdep update
+```
+### 9- Install Prebuilt Package
+```
+sudo apt-get install ros-noetic-catkin
+```
+### 10- Building a catkin workspace and sourcing the setup file
+###### Now you need to build the packages in the catkin workspace
+```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+cd ~/catkin_ws/src
+```
+### 11- Use source-installed rosdep
+###### Clone the development repository
+```
+git clone https://github.com/smart-methods/arduino_robot_arm.git 
+cd ~/catkin_ws
+```
+### 12- Install dependency of all packages in the workspace
+###### This usecase shows even more powerful feature of rosdep
+```
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+
