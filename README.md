@@ -84,7 +84,7 @@ sudo apt-get install ros-kinetic-ros-controllers ros-kinetic-ros-control
 ```
 ### 14- Edit file ~/.bashrc
 ###### at the end of the (bashrc) file add the follwing line
-(source /home/wesam/catkin_ws/devel/setup.bash)
+(source /home/ali/catkin_ws/devel/setup.bash)
 then 
 ctrl + o
 then
@@ -94,4 +94,9 @@ sudo nano ~/.bashrc
 
 source ~/.bashrc
 ```
-### 15- launch
+### 15- Launch The ROS DRIVER
+```
+roslaunch robot_arm_pkg check_motors.launch
+```
+# The output:
+![theoutput](https://user-images.githubusercontent.com/86229247/181602137-8e392949-b2fc-42a0-9c30-ebea03e811c0.png)
